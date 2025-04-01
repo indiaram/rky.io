@@ -4,54 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ram K. Yadav – Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --accent: #007acc;
+      --card: #f4f4f4;
+    }
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #eeeeee;
+      --accent: #4ea8de;
+      --card: #1e1e1e;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s ease, color 0.3s ease;
     }
     header, footer {
-      background: #333;
+      background: var(--accent);
       color: white;
       padding: 1em;
       text-align: center;
     }
     nav {
-      background: #444;
-      padding: 10px;
+      background: var(--card);
       display: flex;
       justify-content: center;
+      gap: 1rem;
+      padding: 10px;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav button {
       background: none;
       border: none;
-      color: white;
-      margin: 0 15px;
-      font-size: 16px;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--text);
       cursor: pointer;
+      padding: 8px 12px;
     }
-    nav button:hover,
     nav button.active {
-      text-decoration: underline;
+      border-bottom: 2px solid var(--accent);
+    }
+    .toggle-theme {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      cursor: pointer;
+      background: none;
+      border: 2px solid white;
+      border-radius: 50%;
+      padding: 5px 8px;
+      color: white;
     }
     section {
-      display: none;
-      padding: 60px 20px;
       max-width: 800px;
       margin: auto;
+      padding: 40px 20px;
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
     section.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
     h2 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    p {
-      line-height: 1.6;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3em;
     }
   </style>
 </head>
@@ -59,12 +93,13 @@
 
 <header>
   <h1>Ram K. Yadav</h1>
+  <button class="toggle-theme" id="theme-toggle">🌓</button>
   <p>Welcome to my personal website</p>
 </header>
 
 <nav>
   <button class="tab active" data-tab="home">Home</button>
-  <button class="tab" data-tab="about">About Me</button>
+  <button class="tab" data-tab="about">About</button>
   <button class="tab" data-tab="projects">Projects</button>
   <button class="tab" data-tab="contact">Contact</button>
 </nav>
@@ -87,7 +122,7 @@
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: ramkeshyadav2005@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/ramkeshyadav" target="_blank">ramkeshyadav</a></p>
+  <p>GitHub: <a href="https://github.com/ramkeshyadav" target="_blank">@ramkeshyadav</a></p>
 </section>
 
 <footer>
@@ -100,17 +135,26 @@
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
-      // Remove "active" from all buttons and sections
       tabs.forEach(t => t.classList.remove("active"));
       sections.forEach(s => s.classList.remove("active"));
 
-      // Add "active" to clicked button and corresponding section
       tab.classList.add("active");
       document.getElementById(tab.dataset.tab).classList.add("active");
     });
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
   });
 </script>
 
 </body>
 </html>
-
