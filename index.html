@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        header, footer {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-        }
-        nav ul {
-            padding: 0;
-            list-style: none;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        h1, h2 {
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ram K. Yadav – Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
+<<<<<<< HEAD
     <header>
         <div class="container">
             <h1>My Personal Website</h1>
@@ -63,5 +81,47 @@
             <p>Copyright © [Ram K. Yadav] [2025]. All rights reserved.</p>
         </div>
     </footer>
+=======
+
+<header>
+  <h1>Ram K. Yadav</h1>
+  <p>Welcome to my personal website</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="home">
+  <h2>Home</h2>
+  <p>Hello! I'm a professional with a passion for science, research, and technology. Explore this site to learn more about me and my work.</p>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm Ram K. Yadav, a research astronomer with interests in star formation, feedback processes, and multi-wavelength observations. I enjoy building scientific collaborations and exploring new ideas across disciplines.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Some of my recent work includes studies on HII regions, dense gas mapping, and multi-line molecular cloud analysis. I'm currently working with observational datasets from JCMT and TRAO.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: ramkeshyadav2005@gmail.com</p>
+  <p>GitHub: <a href="https://github.com/ramkeshyadav" target="_blank">ramkeshyadav</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Ram K. Yadav. All rights reserved.</p>
+</footer>
+
+>>>>>>> e59e1f5 (Add single-page scrolling layout with nav)
 </body>
 </html>
