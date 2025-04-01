@@ -19,12 +19,21 @@
       --card: #1e1e1e;
     }
 
-    body {
+    html, body {
       margin: 0;
+      height: 100%;
+    }
+    body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       transition: background 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
     }
     header, footer {
       background: var(--accent);
@@ -104,28 +113,28 @@
   <button class="tab" data-tab="contact">Contact</button>
 </nav>
 
-<section id="home" class="active">
-  <h2>Home</h2>
-  <p>Hello! I'm a professional with a passion for science, research, and technology. Stay tunes for more info.</p>
-</section>
+<main>
+  <section id="home" class="active">
+    <h2>Home</h2>
+    <p>Hello! I'm a professional with a passion for science, research, and technology. Stay tunes for more info.</p>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <!-- <p>I'm Ram K. Yadav, a research astronomer with interests in star formation, feedback processes, and multi-wavelength observations. I enjoy building scientific collaborations and exploring new ideas across disciplines.</p> -->
-  <p>I'm Ram K. Yadav, a research astronomer with interests in star formation, feedback processes, and multi-wavelength Astronomy and Astrophysics.</p> 
-</section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Ram K. Yadav, a research astronomer with interests in star formation, feedback processes, and multi-wavelength Astronomy and Astrophysics.</p> 
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <!--<p>Some of my recent work includes studies on HII regions, dense gas mapping, and multi-line molecular cloud analysis. I'm currently working with observational datasets from JCMT and TRAO.</p>-->
-  <p></p>
-</section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p></p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: ramkeshyadav2005@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/ramkeshyadav" target="_blank">@ramkeshyadav</a></p>
-</section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: ramkeshyadav2005@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/ramkeshyadav" target="_blank">@ramkeshyadav</a></p>
+  </section>
+</main>
 
 <footer>
   <p>© 2025 Ram K. Yadav. All rights reserved.</p>
