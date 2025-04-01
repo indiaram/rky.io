@@ -8,7 +8,6 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      scroll-behavior: smooth;
     }
     header, footer {
       background: #333;
@@ -19,32 +18,33 @@
     nav {
       background: #444;
       padding: 10px;
+      display: flex;
+      justify-content: center;
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
+    nav button {
+      background: none;
+      border: none;
       color: white;
-      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
     }
-    nav ul li a:hover {
+    nav button:hover,
+    nav button.active {
       text-decoration: underline;
     }
     section {
+      display: none;
       padding: 60px 20px;
       max-width: 800px;
       margin: auto;
+    }
+    section.active {
+      display: block;
     }
     h2 {
       color: #333;
@@ -63,15 +63,13 @@
 </header>
 
 <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <button class="tab active" data-tab="home">Home</button>
+  <button class="tab" data-tab="about">About Me</button>
+  <button class="tab" data-tab="projects">Projects</button>
+  <button class="tab" data-tab="contact">Contact</button>
 </nav>
 
-<section id="home">
+<section id="home" class="active">
   <h2>Home</h2>
   <p>Hello! I'm a professional with a passion for science, research, and technology. Explore this site to learn more about me and my work.</p>
 </section>
@@ -95,6 +93,23 @@
 <footer>
   <p>© 2025 Ram K. Yadav. All rights reserved.</p>
 </footer>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll("section");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove "active" from all buttons and sections
+      tabs.forEach(t => t.classList.remove("active"));
+      sections.forEach(s => s.classList.remove("active"));
+
+      // Add "active" to clicked button and corresponding section
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+</script>
 
 </body>
 </html>
