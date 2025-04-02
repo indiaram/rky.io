@@ -1,1 +1,1 @@
-# rky.io
+# rkyastro.github.io
