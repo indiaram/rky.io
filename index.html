@@ -102,6 +102,27 @@
       border-bottom: 2px solid var(--accent);
       padding-bottom: 0.3em;
     }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      margin-top: 1rem;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -115,32 +136,53 @@
 <nav>
   <button class="tab active" data-tab="home">Home</button>
   <button class="tab" data-tab="about">About</button>
-  <button class="tab" data-tab="projects">Projects</button>
+  <button class="tab" data-tab="research">Research</button>
+  <button class="tab" data-tab="publications">Publications</button>
+  <button class="tab" data-tab="cv">CV</button>
   <button class="tab" data-tab="contact">Contact</button>
 </nav>
 
 <main>
   <section id="home" class="active">
     <h2>Home</h2>
-    <!--<p>Hello! I'm a professional with a passion for science, research, and technology. Stay tunes for more info.</p>-->
     <p>This site is under construction — updates coming soon!</p>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-     <!--<p>I'm Ram K. Yadav, a research astronomer with interests in star formation, feedback processes, and multi-wavelength Astronomy and Astrophysics.</p> -->
-    <p>This site is under construction — updates coming soon!</p> 
+    <h2>About</h2>
+    <p>This site is under construction — updates coming soon!</p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p></p>
+  <section id="research">
+    <h2>Research</h2>
+    <p>This site is under construction — updates coming soon!</p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <p>This site is under construction — updates coming soon!</p>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p>This site is under construction — updates coming soon!</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-<!-- <p>Email: ramkeshyadav2005@gmail.com</p> --> 
-    <p>GitHub: <a href="https://github.com/rkyastro" target="_blank">@rkyastro</a></p>
+    <p>If you would like to reach out, feel free to send a message below. Your email address will remain private.</p>
+    <form action="https://formspree.io/f/mnqelkkg" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 </main>
 
