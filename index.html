@@ -2,220 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ram K. Yadav – Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Ram K. Yadav</title>
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #222222;
-      --accent: #007acc;
-      --card: #f4f4f4;
-    }
-    [data-theme="dark"] {
-      --bg: #121212;
-      --text: #eeeeee;
-      --accent: #4ea8de;
-      --card: #1e1e1e;
-    }
-
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s ease, color 0.3s ease;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    main {
-      flex: 1;
-    }
-    header {
-      background: var(--accent);
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
-    footer {
-      background: #000;
-      color: white;
-      padding: 0.5em;
-      text-align: center;
-    }
-    nav {
-      background: var(--card);
-      display: flex;
+      height: 100vh;
       justify-content: center;
-      gap: 1rem;
-      padding: 10px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav button {
-      background: none;
-      border: none;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      padding: 8px 12px;
-    }
-    nav button.active {
-      border-bottom: 2px solid var(--accent);
-    }
-    .toggle-theme {
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-      cursor: pointer;
-      background: none;
-      border: 2px solid white;
-      border-radius: 50%;
-      padding: 5px 8px;
-      color: white;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-      display: none;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    h2 {
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.3em;
-    }
-    form label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      margin-top: 1rem;
-      background-color: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      align-items: center;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Ram K. Yadav</h1>
-  <button class="toggle-theme" id="theme-toggle">🌓</button>
-  <p>Welcome to my personal website</p>
-</header>
-
-<nav>
-  <button class="tab active" data-tab="home">Home</button>
-  <button class="tab" data-tab="about">About</button>
-  <button class="tab" data-tab="research">Research</button>
-  <button class="tab" data-tab="publications">Publications</button>
-  <button class="tab" data-tab="cv">CV</button>
-  <button class="tab" data-tab="contact">Contact</button>
-</nav>
-
-<main>
-  <section id="home" class="active">
-    <h2>Home</h2>
-    <p>This site is under construction — updates coming soon!</p>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>This site is under construction — updates coming soon!</p>
-  </section>
-
-  <section id="research">
-    <h2>Research</h2>
-    <p>This site is under construction — updates coming soon!</p>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-    <p>This site is under construction — updates coming soon!</p>
-  </section>
-
-  <section id="cv">
-    <h2>CV</h2>
-    <p>This site is under construction — updates coming soon!</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you would like to reach out, feel free to send a message below. Your email address will remain private.</p>
-    <form action="https://formspree.io/f/xgvanzwp" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Ram K. Yadav. All rights reserved.</p>
-</footer>
-
-<script>
-  const tabs = document.querySelectorAll(".tab");
-  const sections = document.querySelectorAll("section");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      sections.forEach(s => s.classList.remove("active"));
-
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab).classList.add("active");
-    });
-  });
-
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  });
-</script>
-
+  <div>
+    <h1>Coming Soon</h1>
+    <p>This site is under quiet construction.<br>Check back again later.</p>
+  </div>
 </body>
 </html>
